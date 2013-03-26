@@ -5,6 +5,7 @@
 /*function prototype*/
 int* summary(int a[], int length);
 void printArray(int array[], int i);
+
 int main()
 {
     int k;
@@ -18,6 +19,7 @@ int main()
     
     summary(userArray, length);
     printf("\n");
+    
     return 0;
 }/*main*/
 
@@ -37,16 +39,17 @@ int* summary(int a[], int length){
         
         counter+=a[i];
         p[i] = counter;
+   
     }/*for*/
     printArray(p, 0);
     return p;
     free(p);
-    
 }/*summary*/
 
 void printArray(int array[], int i){
-    if(array[i]=='\0')
-        return;
+    if(array[i]=='\0'){
+	 return;
+	}
     else{
         printf("%d ", array[i]);
         printArray(array, i+1);
