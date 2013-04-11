@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #define MAX 50
 
-/*function prototype*/
-int* summary(int a[], int length);
-void printArray(int array[], int i);
+   /*function prototype*/
+ int* summary(int a[], int length);
+ void printArray(int array[], int i);
 
 int main()
 {
