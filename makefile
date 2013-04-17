@@ -1,2 +1,2 @@
 summary: summary.c
-	gcc -Wall -g summary.c -o summary
+	gcc -Wall -ansi -pedantic  -g summary.c -o summary

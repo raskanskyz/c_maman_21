@@ -1,3 +1,5 @@
+/*  This program returns the summary of a given array. */
+
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 50
@@ -10,7 +12,7 @@ int main(){
 	int k;
 	int length=0;
 	int userArray[MAX];
-	printf("Enter some numbers:\n");
+	printf("Enter up to 50 numbers to get a summaryof them:\n");
 	while((scanf("%d", &k) ==1)){
 		userArray[length] = k;
 		length++;
@@ -28,6 +30,11 @@ int main(){
 	return 0;
 }/*main*/
 
+/* The 'summary' function dynamically allocates memory with a size that fits the 
+   amount of numbers the user inputed (no greater than 50 numbers).
+   if there is not enough memory to allocate, an error is displayed and the program
+   terminates, otherwise the summary array is printed using the printArray method
+   and the allocated memory is then freed. */
 void summary(int a[], int length){
 	int i;
 	int counter = 0;
@@ -51,6 +58,10 @@ void summary(int a[], int length){
 	free(p);
 }/*summary*/
 
+/* the 'printArray' function is recursively implemented.
+   Base case: if end of array is reached, return.
+   Otherwise print current number and call 'printArray' starting
+   at the next index.  */
 void printArray(int array[], int i){
 	if(array[i]=='\0'){
 		return;
