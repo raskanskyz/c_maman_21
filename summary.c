@@ -12,7 +12,7 @@ int main(){
 	int k;
 	int length=0;
 	int userArray[MAX];
-	printf("Enter up to 50 numbers to get a summaryof them:\n");
+	printf("Enter up to 50 numbers to get a summary of them:\n");
 	while((scanf("%d", &k) ==1)){
 		userArray[length] = k;
 		length++;
