@@ -6,7 +6,7 @@
 
 /*function prototype*/
 void summary(int a[], int length);
-void printArray(int array[], int i);
+void printArray(int array[], int from, int to);
 
 int main(){
 	int k;
@@ -54,7 +54,7 @@ void summary(int a[], int length){
 
 	}/*for*/
 	p[length] = '\0';
-	printArray(p, 0);
+	printArray(p, 0, length);
 	free(p);
 }/*summary*/
 
@@ -62,12 +62,12 @@ void summary(int a[], int length){
    Base case: if end of array is reached, return.
    Otherwise print current number and call 'printArray' starting
    at the next index.  */
-void printArray(int array[], int i){
-	if(array[i]=='\0'){
+void printArray(int array[], int from, int to){
+	if(from==to){
 		return;
 	}
 	else{
-		printf("%d ", array[i]);
-		printArray(array, i+1);
+		printf("%d ", array[from]);
+		printArray(array, from+1, to);
 	}
 }/*prinArray*/
